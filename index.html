@@ -478,6 +478,90 @@ body.addopen .tabs .fab .i{transform:rotate(45deg)}
 .rstream summary{display:flex;align-items:center;gap:12px;padding:12px 0}
 .rstream .ck.on{background:#2F5B47;border-color:#2F5B47}
 .seg.scroll{overflow-x:auto;scrollbar-width:none}.seg.scroll::-webkit-scrollbar{display:none}.seg.scroll button{flex:none;padding:9px 14px}
+
+/* ============ STYLE iOS MINIMALISTE ============ */
+:root{
+  --bg:#F2F2F7;--card:#FFFFFF;--ink:#1C1C1E;--muted:#8E8E93;--line:rgba(60,60,67,.12);--soft:rgba(118,118,128,.12);
+  --acc:#C9683F;--acc2:#6F9E8F;--acc-soft:rgba(201,104,63,.12);
+  --pink:#fff;--lav:#fff;--sky:#fff;--mint:#fff;--butter:#fff;--peach:#fff;
+  --r:16px;--shadow:none;--shadow2:none;
+  --f:-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display','Helvetica Neue',system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{--bg:#000;--card:#1C1C1E;--ink:#F2F2F7;--muted:#8E8E93;--line:rgba(84,84,88,.6);--soft:rgba(118,118,128,.24);--pink:#1C1C1E;--lav:#1C1C1E;--sky:#1C1C1E;--mint:#1C1C1E;--butter:#1C1C1E;--peach:#1C1C1E;--acc-soft:rgba(201,104,63,.22)}}
+html,body{font-family:var(--f);-webkit-font-smoothing:antialiased;letter-spacing:-.2px}
+body::before{display:none}
+/* barre du haut : grand titre iOS */
+.top{background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:.5px solid transparent;min-height:52px}
+.top h1{font-size:34px;font-weight:700;letter-spacing:.2px}
+.chip{background:transparent;box-shadow:none;padding:6px 6px;font-weight:600;font-size:15px;color:var(--ink)}
+.chip svg,.chip .i{color:var(--acc)}
+.iconbtn,.back{background:transparent;box-shadow:none;color:var(--acc);width:36px;height:36px}
+/* barre d'onglets iOS */
+.tabs{left:0;right:0;bottom:0;max-width:none;border-radius:0;padding:6px 4px calc(4px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--card) 82%,transparent);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);box-shadow:none;border-top:.5px solid var(--line)}
+.tabs button{font-size:10px;font-weight:500;gap:2px;color:#999}
+.tabs button.on{color:var(--acc)}
+.tabs .fab{width:44px;height:44px;margin:0 8px;background:var(--acc);box-shadow:none}
+body{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
+/* textes */
+.hello h2{font-size:28px;font-weight:700;letter-spacing:.1px}
+.hello h2 span{color:inherit}
+.hello p{font-weight:400;font-size:15px}
+.h2{font-size:13px;font-weight:400;text-transform:uppercase;letter-spacing:.2px;color:var(--muted);margin:26px 16px 7px}
+.h2 .i{color:var(--muted);width:15px;height:15px}
+.h2 small{text-transform:none;font-size:15px;font-weight:400;color:var(--acc)}
+.b{font-weight:600}
+/* cartes = listes groupées iOS */
+.card{border-radius:12px;box-shadow:none;padding:14px 16px;margin-bottom:10px}
+.btn{border-radius:12px;font-weight:600;font-size:17px;padding:13px 18px;background:var(--acc)}
+.btn.sm{border-radius:999px;font-size:15px;padding:7px 14px}
+.btn.alt{background:var(--soft);color:var(--acc)}
+.btn.gold,.btn.gem{background:var(--acc);color:#fff}
+.btn:active,.iconbtn:active,.tap:active,.ccard:active{transform:none;opacity:.55}
+/* segmented control iOS */
+.seg{background:rgba(118,118,128,.12);border-radius:9px;padding:2px;margin:6px 0 16px}
+.seg button{border-radius:7px;padding:6px 4px;font-size:13px;font-weight:500;color:var(--ink)}
+.seg button.on{background:var(--card);color:var(--ink);box-shadow:0 3px 8px rgba(0,0,0,.12),0 3px 1px rgba(0,0,0,.04);font-weight:600}
+.seg.pink button.on{background:var(--card);color:var(--ink)}
+.seg button .i{display:none}
+/* champs */
+input,textarea,select{background:var(--card);border:0;border-radius:10px;font-size:17px;padding:11px 14px}
+.sheet input,.sheet textarea,.sheet select{background:var(--soft)}
+input:focus,textarea:focus,select:focus{box-shadow:0 0 0 2px var(--acc-soft)}
+/* pastilles et anneaux : plus discrets */
+.dots i{width:7px;height:7px;background:rgba(60,60,67,.2)}.dots i.on{width:7px;background:var(--ink)}
+.qcard,.ccard,.tile,.stat,.hstats>div{box-shadow:none!important}
+.hstats>div{background:var(--card);border-radius:12px}
+.hstats b{font-weight:700;font-family:ui-rounded,-apple-system,system-ui,sans-serif}
+.lvbar .pbar,.pbar{height:4px;border-radius:4px;background:rgba(120,120,128,.16)}
+.pbar i{background:var(--acc)}
+.qday{border:0;padding-left:0}
+/* feuilles du bas */
+.sheet,.sh{border-radius:12px 12px 0 0}
+.toast{border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.12);font-weight:500}
+/* titres en SF, la lecture (prières, pensée) garde sa police */
+.hgreet h2,.rrank,.wpanel h4,.wfg h4,.editor .etitle{font-family:var(--f);font-weight:700;letter-spacing:.2px}
+.hgreet h2{font-size:30px}
+.hgreet h2 span{color:inherit}
+/* tuiles « Mes espaces » façon Réglages iOS */
+.space{background:var(--card)!important;box-shadow:none!important;border-radius:12px!important}
+.space .si{width:34px;height:34px;border-radius:8px;display:grid;place-items:center;background:currentColor}
+.space .si svg{color:#fff}
+.space .go{color:#C7C7CC!important}
+.space b{font-weight:600}
+.space span{font-weight:400}
+/* cartes colorées → blanches */
+.skhero,.ccard,.qcard{background:var(--card)!important;box-shadow:none!important;border-radius:12px!important}
+.skhero .ball{background:var(--acc-soft)!important;color:var(--acc)}
+.skhero{background:var(--card)!important;color:var(--ink)!important;border-radius:12px!important}
+/* bandeaux de couleur → cartes iOS sobres */
+.hero{background:var(--card)!important;color:var(--ink)!important;border-radius:12px!important;box-shadow:none!important}
+.hero h2{font-weight:700;font-size:28px}
+.hero p{color:var(--muted)!important;font-weight:400}
+.hero .deco{color:var(--acc);opacity:.08}
+.hero .chip,.hero>div>div{background:var(--bg)!important;color:var(--ink)!important}
+.hero .pbar{background:rgba(120,120,128,.16)!important}
+.moneyhero{background:var(--card)!important;color:var(--ink)!important;border-radius:12px!important;box-shadow:none!important}
+.top h1{font-size:30px}
 </style>
 </head>
 <body>
