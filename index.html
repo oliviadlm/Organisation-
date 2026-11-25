@@ -1,2 +1,11 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Déménagé</title></head>
-<body style="font:16px -apple-system,system-ui,sans-serif;display:grid;place-items:center;min-height:100vh;margin:0;background:#F4F1EA;color:#1F2A24"><p>Cette page n'est plus disponible.</p></body></html>
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Ma Journée</title></head>
+<body style="font:16px -apple-system,system-ui,sans-serif;display:grid;place-items:center;min-height:100vh;margin:0;background:#F4F1EA;color:#1F2A24;padding:24px;box-sizing:border-box">
+<div style="max-width:360px;text-align:center"><p style="font-weight:700;font-size:20px">Cette app a déménagé.</p>
+<div id="b" hidden><p style="color:#6d756f">Ta progression est encore sur cet appareil. Copie-la, puis colle-la dans la nouvelle app : Réglages → Coller ma progression.</p>
+<button id="c" style="font:inherit;font-weight:600;background:#2F5D50;color:#fff;border:0;border-radius:14px;padding:14px 20px;width:100%">Copier ma progression</button>
+<textarea id="t" readonly hidden style="width:100%;height:120px;margin-top:12px"></textarea><p id="m" style="color:#2F5D50;font-weight:600"></p></div></div>
+<script>
+// Lit uniquement les données déjà présentes sur cet appareil ; rien n'est envoyé nulle part.
+let d=null;try{d=localStorage.getItem('olivia_ma_journee_v1')}catch(e){}
+if(d){b.hidden=false;c.onclick=async()=>{try{await navigator.clipboard.writeText(d);m.textContent='Copié !'}catch(e){t.hidden=false;t.value=d;t.select();m.textContent='Sélectionne tout le texte et copie-le.'}}}
+</script></body></html>
